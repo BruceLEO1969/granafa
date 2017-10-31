@@ -1,0 +1,20 @@
+#/bin/bash
+
+set -e
+
+yaourt -Sy collectd influxdb grafana --noconfirm &>/dev/null
+curl -LO https://raw.githubusercontent.com/BruceLEO1969/granafa/master/collectd.conf &>/dev/null
+curl -LO https://raw.githubusercontent.com/BruceLEO1969/granafa/master/grafana.ini &>/dev/null
+curl -LO https://raw.githubusercontent.com/BruceLEO1969/granafa/master/influxdb.conf &>/dev/null
+
+sudo mv collectd.conf /etc/collectd.conf
+sudo mv influxdb.conf /etc/influxdb/influxdb.conf
+sudo mv grafana.ini /etc/grafana.ini
+
+sudo systemctl enable collectd
+sudo systemctl enable influxdb
+sudo systemctl enable grafana
+
+sudo systemctl start collectd
+sudo systemctl start influxdb
+sudo systemctl start grafana
