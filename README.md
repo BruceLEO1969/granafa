@@ -1,0 +1,2 @@
+# granafa
+Conf of grafana.
