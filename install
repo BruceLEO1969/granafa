@@ -2,7 +2,7 @@
 
 set -e
 
-yaourt -Sy collectd influxdb grafana --noconfirm &>/dev/null
+yaourt -Sy collectd influxdb grafana liboping --noconfirm &>/dev/null
 curl -LO https://raw.githubusercontent.com/BruceLEO1969/granafa/master/collectd.conf &>/dev/null
 curl -LO https://raw.githubusercontent.com/BruceLEO1969/granafa/master/grafana.ini &>/dev/null
 curl -LO https://raw.githubusercontent.com/BruceLEO1969/granafa/master/influxdb.conf &>/dev/null
